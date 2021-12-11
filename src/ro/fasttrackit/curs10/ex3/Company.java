@@ -27,7 +27,7 @@ public class Company {
     public List<Person> getPersons(String profession) {
         List<Person> grup = new ArrayList<>();
         for (Person employee : employees) {
-            if (profession.equals(employee.getPosition())) {
+            if (ensureNotEmpty(profession).equals(employee.getPosition())) {
                 grup.add(employee);
             }
         }
@@ -37,7 +37,7 @@ public class Company {
     public List<Person> getPersonsOlder(int age) {
         List<Person> olderGrup = new ArrayList<>();
         for (Person employee : employees) {
-            if (age < (employee.getAge())) {
+            if (age < employee.getAge()) {
                 olderGrup.add(employee);
             }
         }
@@ -60,5 +60,8 @@ public class Company {
 
     public String getName() {
         return name;
+    }
+    public static String ensureNotEmpty(String word) {
+        return word == null || "".equals(word.trim()) ? "n/a" : word;
     }
 }

@@ -1,12 +1,9 @@
 package ro.fasttrackit.curs10.ex1;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Basket {
-    private ArrayList<String> fruits;
+    private List<String> fruits;
 
     public Basket(Collection<String> fruits) {
         this.fruits = new ArrayList<>();
@@ -24,11 +21,13 @@ public class Basket {
 
     public boolean remove(String fruit) {
         boolean removed = false;
-        for (int i = 0; i < fruits.size(); i++) {
-            if (fruits.get(i).equals(fruit)) {
-                fruits.remove(fruits.get(i));
+        Iterator<String> iterator = fruits.iterator();
+        while (iterator.hasNext()) {
+            if (fruit.equals(iterator.next())) {
+                iterator.remove();
                 removed = true;
             }
+
         }
         return removed;
     }
@@ -43,11 +42,9 @@ public class Basket {
     }
 
     public Collection<String> distinct() {
-        List<String> distinctFruits = new ArrayList<>();
+        Set<String> distinctFruits = new HashSet<>();
         for (String iFruit : fruits) {
-            if (!distinctFruits.contains(iFruit)) {
-                distinctFruits.add(iFruit);
-            }
+            distinctFruits.add(iFruit);
         }
         return distinctFruits;
     }

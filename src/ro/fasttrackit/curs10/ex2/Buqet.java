@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 public class Buqet {
-    private HashSet<String> flowers;
+    private Collection<String> flowers;
 
     public Buqet(Collection<String> flowers) {
         this.flowers = new HashSet<>();
