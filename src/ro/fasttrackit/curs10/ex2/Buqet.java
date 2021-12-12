@@ -1,13 +1,11 @@
 package ro.fasttrackit.curs10.ex2;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class Buqet {
-    private Collection<String> flowers;
+    private Set<String> flowers;
 
-    public Buqet(Collection<String> flowers) {
+    public Buqet(Set<String> flowers) {
         this.flowers = new HashSet<>();
         this.flowers.addAll(flowers);
     }

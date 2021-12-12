@@ -7,9 +7,9 @@ import java.util.List;
 public class Company {
 
     private String name;
-    private ArrayList<Person> employees;
+    private List<Person> employees;
 
-    public Company(String name, Collection<Person> employees) {
+    public Company(String name, List<Person> employees) {
         this.name = name;
         this.employees = new ArrayList<>();
         this.employees.addAll(employees);

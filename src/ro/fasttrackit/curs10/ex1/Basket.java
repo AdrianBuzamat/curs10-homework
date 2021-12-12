@@ -5,7 +5,7 @@ import java.util.*;
 public class Basket {
     private List<String> fruits;
 
-    public Basket(Collection<String> fruits) {
+    public Basket(List<String> fruits) {
         this.fruits = new ArrayList<>();
         this.fruits.addAll(fruits);
     }
